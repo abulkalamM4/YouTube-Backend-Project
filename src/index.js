@@ -1,11 +1,8 @@
-import dotenv from "dotenv";  
+import dotenv from "dotenv";
+dotenv.config({ path: "./.env" });
+
 import connectDB from "./db/index.js";  
 import {app} from "./app.js"
-
-dotenv.config({
-     path: "../.env"
-    }) ;
-
  
 connectDB().then(() => {
     app.listen(process.env.PORT || 8000, () => {
@@ -15,3 +12,6 @@ connectDB().then(() => {
 .catch((err) => {
     console.log("MONGO DB connection failed !!!", err);
 })
+
+
+// how to use postman 19min
